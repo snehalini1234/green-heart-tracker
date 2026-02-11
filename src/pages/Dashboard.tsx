@@ -6,6 +6,7 @@ import GlobalImpactSection from "@/components/GlobalImpactSection";
 import WeeklyChart from "@/components/WeeklyChart";
 import DailyActivityForm from "@/components/DailyActivityForm";
 import EcoPointsBadge from "@/components/EcoPointsBadge";
+import ProductScanner from "@/components/ProductScanner";
 import type { DailyActivity } from "@/lib/carbonCalculator";
 import { getCategoryBreakdown } from "@/lib/carbonCalculator";
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from "recharts";
@@ -147,6 +148,16 @@ const Dashboard = () => {
                 </p>
               </div>
             )}
+          </section>
+
+          {/* Product Scanner */}
+          <section>
+            <h2 className="text-2xl font-heading font-bold text-foreground mb-4 flex items-center gap-2">
+              📸 Product Scanner
+            </h2>
+            <div className="max-w-lg">
+              <ProductScanner />
+            </div>
           </section>
         </div>
       </main>
