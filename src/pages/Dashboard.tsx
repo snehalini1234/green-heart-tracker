@@ -8,6 +8,8 @@ import DailyActivityForm from "@/components/DailyActivityForm";
 import EcoPointsBadge from "@/components/EcoPointsBadge";
 import ProductScanner from "@/components/ProductScanner";
 import EcoLeaderboard from "@/components/EcoLeaderboard";
+import DeliveryTracker from "@/components/DeliveryTracker";
+import BangaloreRoutePlanner from "@/components/BangaloreRoutePlanner";
 import type { DailyActivity } from "@/lib/carbonCalculator";
 import { getCategoryBreakdown } from "@/lib/carbonCalculator";
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from "recharts";
@@ -149,6 +151,12 @@ const Dashboard = () => {
                 </p>
               </div>
             )}
+          </section>
+
+          {/* Delivery Tracker & Route Planner */}
+          <section className="grid lg:grid-cols-2 gap-6">
+            <DeliveryTracker onEmissionAdd={(e) => setLatestEmission((prev) => (prev ?? 0) + e)} />
+            <BangaloreRoutePlanner />
           </section>
 
           {/* Leaderboard & Product Scanner */}
